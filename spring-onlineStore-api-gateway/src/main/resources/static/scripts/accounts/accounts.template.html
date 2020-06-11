@@ -1,0 +1,21 @@
+<h2>Accounts</h2>
+
+<form onsubmit="javascript:void(0)" style="max-width: 20em; margin-top: 2em;">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search Filter" ng-model="$ctrl.query" />
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Account name</th>
+    </tr>
+    </thead>
+
+    <tr ng-repeat="account in $ctrl.items | filter:$ctrl.query track by account.id">
+        <td>{{account.id}}</td>
+        <td>{{account.name}}</td>
+    </tr>
+</table>

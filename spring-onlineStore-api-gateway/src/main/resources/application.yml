@@ -1,0 +1,37 @@
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    gateway:
+      routes:
+        - id: accounts-service
+          uri: lb://accounts-service
+          predicates:
+            - Path=/api/accounts/**
+          filters:
+            - StripPrefix=2
+        - id: carts-service
+          uri: lb://carts-service
+          predicates:
+            - Path=/api/carts/**
+          filters:
+            - StripPrefix=2
+        - id: discounts-service
+          uri: lb://discounts-service
+          predicates:
+            - Path=/api/discounts/**
+          filters:
+            - StripPrefix=2
+        - id: inventory-service
+          uri: lb://inventory-service
+          predicates:
+            - Path=/api/inventory/**
+          filters:
+            - StripPrefix=2
+        - id: payments-service
+          uri: lb://payments-service
+          predicates:
+            - Path=/api/payments/**
+          filters:
+            - StripPrefix=2
