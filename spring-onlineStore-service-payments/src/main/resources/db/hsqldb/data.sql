@@ -5,7 +5,7 @@ INSERT INTO types VALUES (4, 'snake');
 INSERT INTO types VALUES (5, 'bird');
 INSERT INTO types VALUES (6, 'hamster');
 
-INSERT INTO payments VALUES (1, 'MasterCard', 'Пошёл нахер', 1, 1);
+INSERT INTO payments VALUES (1, 'MasterCard', '2012-09-06', 1, 1);
 INSERT INTO payments VALUES (2, 'Visa', '2012-08-06', 6, 2);
 INSERT INTO payments VALUES (3, 'Rosy', '2011-04-17', 2, 3);
 INSERT INTO payments VALUES (4, 'Jewel', '2010-03-07', 2, 3);
