@@ -11,11 +11,17 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>Date</th>
+        <th>Payment type</th>
+        <th>Amount ($)</th>
     </tr>
     </thead>
 
     <tr ng-repeat="payment in $ctrl.items | filter:$ctrl.query track by payment.id">
         <td>{{payment.id}}</td>
         <td>{{payment.name}}</td>
+        <td>{{payment.date}}</td>
+        <td>{{payment.type.name}}</td>
+        <td>{{payment.amount}}</td>
     </tr>
 </table>

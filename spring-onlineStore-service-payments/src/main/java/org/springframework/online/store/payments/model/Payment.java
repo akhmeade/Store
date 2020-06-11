@@ -49,8 +49,8 @@ public class Payment {
     @JoinColumn(name = "type_id")
     private PaymentType type;
 
-    @Column(name = "owner_id")
-    private Integer ownerId;
+    @Column(name = "amount")
+    private Integer amount;
 
     public Integer getId() {
         return id;
@@ -84,12 +84,12 @@ public class Payment {
         this.type = type;
     }
 
-    public Integer getOwnerId() {
-        return ownerId;
+    public Integer getAmount() {
+        return amount;
     }
 
-    public Payment setOwnerId(Integer ownerId) {
-        this.ownerId = ownerId;
+    public Payment setAmount(Integer amount_) {
+        this.amount = amount_;
         return this;
     }
 
@@ -100,6 +100,7 @@ public class Payment {
             .append("name", this.getName())
             .append("someDate", this.getDate())
             .append("type", this.getType().getName())
+            .append("amount", this.getAmount())
             .toString();
     }
 
