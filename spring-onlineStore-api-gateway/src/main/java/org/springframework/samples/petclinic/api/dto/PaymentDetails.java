@@ -32,6 +32,8 @@ public class PaymentDetails {
 
     private PaymentType type;
 
+    private int amount;
+
     private final List<VisitDetails> visits = new ArrayList<>();
 
 }
