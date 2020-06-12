@@ -1,0 +1,27 @@
+<h2>Payment Information</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th class="col-sm-3">Name</th>
+        <td><b>{{$ctrl.payment.name}}</b></td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td>{{$ctrl.payment.date}}</td>
+    </tr>
+    <tr>
+        <th>Type</th>
+        <td>{{$ctrl.payment.type.name}}</td>
+    </tr>
+    <tr>
+        <th>Amount</th>
+        <td>{{$ctrl.payment.amount}}</td>
+    </tr>
+  <!--  <tr>
+        <td>
+            <a class="btn btn-default" ui-sref="paymentEdit({paymentId: $ctrl.payment.id})">Edit Payment</a>
+        </td>
+    </tr>-->
+</table>
+
+

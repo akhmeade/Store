@@ -22,7 +22,10 @@
     </thead>
 
     <tr ng-repeat="payment in $ctrl.items | filter:$ctrl.query track by payment.id">
-        <td>{{payment.id}}</td>
+        <td>
+            <a ui-sref="paymentDetails({ paymentId: payment.id })">
+                {{payment.id}}
+            </a>
         <td>{{payment.name}}</td>
         <td>{{payment.date}}</td>
         <td>{{payment.type.name}}</td>
