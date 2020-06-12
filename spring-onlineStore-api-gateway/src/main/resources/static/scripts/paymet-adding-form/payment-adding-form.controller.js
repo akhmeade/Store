@@ -4,24 +4,18 @@ angular.module('paymentForm')
     .controller('PaymentAddingFormController', ["$http", '$state', '$stateParams', function ($http, $state, $stateParams) {
         var self = this;
 
-        var paymentId = $stateParams.paymentId || 0;
-
-        if (!paymentId) {
-            self.payment = {};
-        } else {
-            $http.get("api/payment/payments/" + paymentId).then(function (resp) {
-                self.payment = resp.data;
-            });
-        }
+        $http.get("api/payments/new").then(function (resp) {
+            self.payments = resp.data;
+        });
 
         self.submitPaymentForm = function ()
         {
-            var id = self.payment.id;
+            var id = self.payments.id;
             var req;
             if (id) {
-                req = $http.put("api/payment/payments/" + id, self.payment);
+                req = $http.put("api/payment/payments/" + id, self.payments);
             } else {
-                req = $http.post("api/payment/payments", self.payment);
+                req = $http.post("api/payment/payments", self.payments);
             }
 
             req.then(function () {
