@@ -1,0 +1,22 @@
+<h2>Item Information</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th class="col-sm-3">Name</th>
+        <td><b>{{$ctrl.item.name}}</b></td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td>{{$ctrl.item.price}}</td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>{{$ctrl.item.description}}</td>
+    </tr>
+    <tr>
+        <td>
+            <a class="btn btn-default" ui-sref="itemAdd({itemId: $ctrl.item.id})">Add Item</a>
+        </td>
+    </tr>
+</table>
+
