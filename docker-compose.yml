@@ -3,14 +3,14 @@ version: '2'
 services:
   config-server:
     image: onlienstore/spring-petclinic-config-server
-    container_name: config-server
+    container_name: config-server1
     mem_limit: 512M
     ports:
       - 8888:8888
 
   discovery-server:
     image: onlienstore/spring-petclinic-discovery-server
-    container_name: discovery-server
+    container_name: discovery-server1
     mem_limit: 512M
     depends_on:
       - config-server
@@ -20,7 +20,7 @@ services:
 
   accounts-service:
     image: onlienstore/spring-petclinic-service-accounts
-    container_name: accounts-service
+    container_name: accounts-service1
     mem_limit: 512M
     depends_on:
       - config-server
@@ -31,7 +31,7 @@ services:
 
   carts-service:
     image: onlienstore/spring-petclinic-service-carts
-    container_name: carts-service
+    container_name: carts-service1
     mem_limit: 512M
     depends_on:
       - config-server
@@ -42,7 +42,7 @@ services:
 
   discounts-service:
     image: onlienstore/spring-petclinic-service-discounts
-    container_name: discounts-service
+    container_name: discounts-service1
     mem_limit: 512M
     depends_on:
       - config-server
@@ -52,8 +52,8 @@ services:
       - 8084:8084
 
   inventory-service:
-    image: onlienstore/spring-petclinic-service-inventory-new
-    container_name: inventory-service
+    image: onlienstore/spring-petclinic-service-inventory
+    container_name: inventory-service1
     mem_limit: 512M
     depends_on:
       - config-server
@@ -64,7 +64,7 @@ services:
 
   payments-service:
     image: onlienstore/spring-petclinic-service-payments
-    container_name: payments-service
+    container_name: payments-service1
     mem_limit: 512M
     depends_on:
       - config-server
@@ -75,7 +75,7 @@ services:
 
   api-gateway:
     image: onlienstore/spring-petclinic-api-gateway
-    container_name: api-gateway
+    container_name: api-gateway1
     mem_limit: 512M
     depends_on:
       - config-server
@@ -86,7 +86,7 @@ services:
 
   tracing-server:
     image: openzipkin/zipkin
-    container_name: tracing-server
+    container_name: tracing-server1
     mem_limit: 512M
     environment:
     - JAVA_OPTS=-XX:+UnlockExperimentalVMOptions -Djava.security.egd=file:/dev/./urandom
@@ -95,7 +95,7 @@ services:
 
   admin-server:
     image: onlienstore/spring-petclinic-admin-server
-    container_name: admin-server
+    container_name: admin-server1
     mem_limit: 512M
     depends_on:
       - config-server
