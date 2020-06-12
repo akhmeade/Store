@@ -20,7 +20,7 @@
     </tr>
 </table>
 
-<h2>Payment details</h2>
+<h2>Payment information</h2>
 
 <table class="table table-striped">
     <tr ng-repeat="payment in $ctrl.item.payments track by payment.id">
@@ -28,6 +28,7 @@
             <dl class="dl-horizontal">
                 <dt>Payment</dt>
                 <dd>{{payment.name}}</dd>
+                <dd>{{payment.type.name}}</dd>
             </dl>
         </td>
     </tr>
