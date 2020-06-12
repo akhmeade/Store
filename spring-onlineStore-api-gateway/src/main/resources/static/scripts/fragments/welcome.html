@@ -1,7 +1,148 @@
- <h1>The best Online store "Duvtipny"</h1>
+<head>
+    <meta charset="utf-8" />
+    <title>Code</title>
+    <style>
+        body{
+            background:#c0c0c0;
+        }
+        #wrapper{ /* Оболочка страницы сайта */
+            width: 900px; /* Меняется ширина страницы */
+            margin: 0 auto;
+            background:#f2e8c9; /* Меняется задний фон страницы */
+        }
 
- <div class="row">
-  <div class="col-md-12">
-   <img class="img-responsive" src="images/photo_2020-05-10_21-14-46.jpg" alt="" />
-  </div>
- </div>
+        /* Шапка сайта */
+        #header{
+            position:relative; /* Задаём блоку относительное позиционирование для того, чтобы затем размещать, в нём другие элементы и позиционировать относительно его границ поверх фоновой картинки и заголовка */
+            height: 250px; /* Высота шапки */
+            background-color: #c0c0c0; /* Фон шапки */
+            margin-bottom: 5px; /* Нижний отступ шапки от остального контента */
+            border-radius: 5px; /* Закругляются углы блока */
+            box-shadow: rgba(0,0,0,0.5) 0px 1px 3px; /* Тень. Визуально приподнимает блок над оболочкой */
+        }
+        img{ /* Фоновая картинка в шапке */
+            float: left; /* Разрешаем наплывание других элементов на картинку */
+            margin: -40px 0 0 0;} /* Размещаем картинку в блоке header. 1-я и 3-я цифры - двигаем вверх-вниз, 2-я и 4-я цифры - двигаем вправо-влево */
+        h1{ /* Заголовок сайта */
+            margin:0 0 10px 40px; /* Заголовок двигается верх-вправо-вниз-влево. */
+            color:#464451; /* Цвет заголовка */
+        }
+        .nomer{ /*Подзаголовок (номер телефона)*/
+            position:absolute; /* Позиционируем абсолютно подзаголовок, относительно границ блока header. Также можно разместить в шапке сайта ещё другие картинки и абзацы поверх фоновой картинки и заголовка */
+            top:5px; /* Двигается вверх-вниз */
+            left:680px; /* Двигается вправо-влево */
+            font-size: 25px; /* Размер букв подзаголовка */
+            font-style:italic; /* Курсив */
+            font-weight:bold; /* Жирный */
+            color:#464451; /* Цвет букв подзаголовка */
+        }
+
+        /* Сайдбар (колонка справа) */
+
+        #sidebar{
+            background-color: #ffffff;
+            width: 180px;
+            padding: 10px;
+            float: right;
+            border-radius: 5px;
+            box-shadow: rgba(0,0,0,0.5) 0px 1px 3px;
+        }
+        .marcer{
+            float: left;
+            margin: 5px 5px 0 0;
+        }
+
+        /* Контент (статья) */
+        #content{
+            margin-bottom: 5px;
+            width: 676px;
+            padding: 10px;
+            background: #ffffff; /* Фон статьи */
+            border-radius: 5px;
+            box-shadow: rgba(0,0,0,0.5) 0px 1px 3px;
+        }
+        .left{
+            float: left;
+            margin: 30px 7px 7px 7px;
+        }
+        .right{
+            float: right;
+            margin: 7px 0 7px 7px;
+        }
+        /* Подвал */
+
+        #footer{
+            height:80px;
+            background-color: #ffffff;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: rgba(0,0,0,0.5) 0px 1px 3px; /* Тень блока */
+        }
+        .clear{
+            clear: both;
+        }
+        .fon{
+            float:left;
+            margin:20px 0 0 20px;
+        }
+        .fax{
+            float:left;
+            margin:20px 0 0 60px;
+        }
+        .mail{
+            float:left;
+            margin:20px 0 0 60px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="wrapper"> <!--Оболочка страницы-->
+    <!--Шапка сайта-->
+    <div id="header">
+        <!--Заголовок сайта-->
+        <h1 align="center">Online Store "Duvtipny"</h1>
+
+        <p class="nomer">+7 917 294 971 <br> +7 900 650 33 45</p>
+        <img class="center" src="images/photo_2020-05-10_21-14-46.jpg" alt="" />
+    </div>
+    <!--Сайдбар-->
+    <div id="sidebar">
+        <!--меню-->
+        <h3>Our Store</h3>
+        <!--Картинки маркеров меню (галочки)-->
+        <p><img class="marcer" src="images/staff.jpg" width="10" height="10">Our staff</p>
+        <p><img class="marcer" src="images/inventory.jpg" width="10" height="10">Our Inventory</p>
+        <p><img class="marcer" src="images/dollar.jpg" width="10" height="10">Price list</p>
+        <!--Прямая синяя линия-->
+        <hr width="50" color="#037FFC" size="5">
+        <!--Общая информация в сайдбаре-->
+        <h3>Other Information</h3>
+    </div>
+    <!--Основной контент (статья)-->
+    <div id="content">
+        <!--Картинка слева-->
+        <img class="left" src="images/laptop.jpg">
+        <!--Заголовок статьи-->
+        <h3>Our work</h3>
+        <!--Текст статьи-->
+        <p>Hi, everybody!</p>
+        <p>This is our first project using microservices, so do not judge strictly</p>
+        <p>The project contains several microservices that can be accessed via the corresponding tabs.</p>
+        <p>You can find the requirements in our repository: https://github.com/latypdin23/Store</p>
+
+        <p>This online store is intended for managing staff. Managers can control products in the store, who purchased them, for what price, what payment method was used,
+            and other information.</p>
+        <p>You can find information about the development team in the Contacts tab</p>
+        <!--Картинка справа-->
+
+    </div>
+    <!--Запрет наплывания-->
+    <div class="clear"></div>
+    <!--Подвал-->
+    <div id="footer">
+        <p class="fon"><strong>Phone:<br> 265-48-76</strong> </p>
+
+    </div>
+</div>
+</body>
