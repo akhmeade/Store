@@ -2,14 +2,14 @@
 <form ng-submit="$ctrl.submitPaymentForm()" style="max-width: 25em;">
     <div class="form-group">
         <label>Name</label>
-        <input class="form-control" ng-model="$ctrl.payment.name" name="name" required/>
+        <input class="form-control" ng-model="$ctrl.item.name" name="name" required/>
         <span ng-show="paymentForm.name.$error.required" class="help-block">Name is required.</span>
     </div>
 
     <div class="form-group">
         <label>Date</label>
         <div class="col-sm-6">
-            <input class="form-control" ng-model="$ctrl.payment.date" required type="date"/>
+            <input class="form-control" ng-model="$ctrl.item.date" required type="date"/>
             <span ng-show="paymentForm.date.$error.required" class="help-inline"> Payment date is required.</span>
         </div>
     </div>
@@ -18,7 +18,7 @@
     <div class="form-group">
         <label>Type</label>
         <div class="col-sm-6">
-            <select class="form-control" ng-model="$ctrl.type_id">
+            <select class="form-control" ng-model="$ctrl.item.id">
                 <option ng-repeat="t in $ctrl.types track by t.id" value="{{t.id}}">{{t.name}}</option>
             </select>
         </div>
@@ -26,7 +26,7 @@
 
     <div class="form-group">
         <label>Amount</label>
-        <input class="form-control" ng-model="$ctrl.payment.amount" name="amount" required/>
+        <input class="form-control" ng-model="$ctrl.item.amount" name="amount" required/>
         <span ng-show="paymentForm.amount.$error.required" class="help-block">Amount is required.</span>
     </div>
 
