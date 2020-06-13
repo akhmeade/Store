@@ -48,7 +48,7 @@ Like what was done for the configuration server, it is necessary to implement an
 The Eureka server comes with a small supervision interface accessible locally at the address http://localhost:8761/. The status of the different microservices and the number of instances 
 are visible here :
 
-![Eureka](images/Eureka.jpg "Eureka") 
+![Eureka](Eureka.jpg "Eureka") 
 
 ## Team: 
 * Akhmedzianova Adelina
