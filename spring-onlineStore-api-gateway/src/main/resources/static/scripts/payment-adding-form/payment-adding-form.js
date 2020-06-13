@@ -3,7 +3,7 @@
 angular.module('paymentForm', ['ui.router'])
     .config(['$stateProvider', function ($stateProvider) {
         $stateProvider
-            .state('paymentNew', {
+            .state('paymentNew2', {
                 parent: 'app',
                 url: '/payments/new',
                 template: '<payment-adding-form></payment-adding-form>'
