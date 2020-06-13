@@ -12,16 +12,15 @@
 <tr>
     <th>ID</th>
     <th>Name</th>
-    <th>Price</th>
-    <th>Amount ($)</th>
+
 
 </tr>
 </thead>
 
-<tr ng-repeat="cart in $ctrl.items | filter:$ctrl.query track by payment.id">
-    <td>{{cart.id}}</td>
-    <td>{{cart.name}}</td>
-    <td>{{cart.price}}</td>
-    <td>{{cart.amount}}</td>
+<tr ng-repeat="carts in $ctrl.items | filter:$ctrl.query track by carts.id">
+    <td>{{carts.id}}</td>
+    <td>{{carts.name}}</td>
 </tr>
 </table>
+
+

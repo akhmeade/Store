@@ -4,14 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework.samples.petclinic.api</groupId>
-    <artifactId>spring-petclinic-api-gateway</artifactId>
+    <artifactId>spring-onlineStore-api-gateway</artifactId>
     <packaging>jar</packaging>
     <description>Spring PetClinic API Gateway</description>
 
     <parent>
         <groupId>org.springframework.samples</groupId>
         <artifactId>spring-onlineStore-microservices</artifactId>
-        <version>2.2.2</version>
+        <version>2.2.1</version>
     </parent>
 
     <properties>

@@ -19,7 +19,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "types")
-public class CartType {
+public class CartsType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

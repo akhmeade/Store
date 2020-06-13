@@ -19,8 +19,8 @@ import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import org.springframework.online.store.carts.model.Cart;
-import org.springframework.online.store.carts.model.CartRepository;
+import org.springframework.online.store.carts.model.Carts;
+import org.springframework.online.store.carts.model.CartsRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,10 +39,10 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
-@Timed("onlinestore.cart")
-class CartResource {
+@Timed("onlinestore.carts")
+class CartsResource {
 
-    private final CartRepository cartRepository;
+   /* private final CartRepository cartRepository;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -69,5 +69,38 @@ class CartResource {
         cartModel.setId(cartRequest.getId());
         log.info("Saving item {}", cartModel);
         cartRepository.save(cartModel);
+    }
+}
+*/
+   private final CartsRepository cartsRepository;
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Carts createItem(@Valid @RequestBody Carts carts) {
+        return cartsRepository.save(carts);
+    }
+
+    @GetMapping(value = "/{cartsId}")
+    public Optional<Carts> findCart(@PathVariable("cartsId") int cartsId) {
+        return cartsRepository.findById(cartsId);
+    }
+
+    @GetMapping
+    public List<Carts> findAll() {
+        return cartsRepository.findAll();
+    }
+
+    @PutMapping(value = "/{cartsId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateCarts(@PathVariable("cartsId") int cartsId, @Valid @RequestBody Carts cartsRequest) {
+        final Optional<Carts> carts = cartsRepository.findById(cartsId);
+
+        final Carts cartsModel = carts.orElseThrow(() -> new ResourceNotFoundException("Owner " + cartsId + " not found"));
+        // This is done by hand for simplicity purpose. In a real life use-case we should consider using MapStruct.
+        cartsModel.setName(cartsRequest.getName());
+        cartsModel.setPrice(cartsRequest.getPrice());
+        cartsModel.setAmount(cartsRequest.getAmount());
+        log.info("Saving item {}", cartsModel);
+        cartsRepository.save(cartsModel);
     }
 }

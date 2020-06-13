@@ -8,13 +8,21 @@ CREATE TABLE types (
 CREATE INDEX types_name ON types (name);
 
 CREATE TABLE carts (
-  id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  id         INTEGER IDENTITY PRIMARY KEY,
   name VARCHAR(255),
   price VARCHAR(255),
-  description VARCHAR(255)
-) engine=InnoDB;
+  amount INTEGER NOT NULL
+  /*description VARCHAR(255)*/
+
 );
-ALTER TABLE payments ADD CONSTRAINT fk_pets_types FOREIGN KEY (type_id) REFERENCES types (id);
-CREATE INDEX payments_name ON payments (name);
+/*ALTER TABLE carts ADD CONSTRAINT fk_pets_types  REFERENCES types (id);*/
+/*CREATE INDEX payments_name ON carts (name);
+=======
+  description VARCHAR(255)
+);
+
+/*ALTER TABLE carts ADD CONSTRAINT fk_pets_types FOREIGN KEY (type_id) REFERENCES types (id);
+/*CREATE INDEX payments_name ON payments (name);*/
+/*>>>>>>> eeef26f40584eb220a0029408827c8fe749ef78d*/
 
 
