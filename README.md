@@ -64,7 +64,7 @@ To avoid any standard code, Spring Cloud Netflix suggests using the Zuul proxy .
 ## SpringBoot
 Spring Boot Admin uses various drives offered by Spring Boot: heapdump, threadump, logging tools, scheduled tasks… Starting with Spring Boot 2, for security reasons, only the status and information of the drives are displayed by default. Other execution mechanisms must be explicitly activated.
 Admin Spring Boot admin http http: / / localhost: 9090 / :
-![logs](logs.jpg "SpringBoot") 
+![logs](logs.JPG "SpringBoot") 
 ## Team: 
 * Akhmedzianova Adelina
 * Antonov Nikolai
