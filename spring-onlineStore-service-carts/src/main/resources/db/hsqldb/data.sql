@@ -1,9 +1,14 @@
+INSERT INTO types VALUES (1, 'Adelina');
+INSERT INTO types VALUES (2, 'Regina');
+INSERT INTO types VALUES (3, 'Ekaterina');
+INSERT INTO types VALUES (4, 'Dina');
 
-INSERT  INTO carts VALUES (1, 'Iphone', '700 $','iPhone 11 64 Gb Grey');
-INSERT  INTO carts VALUES (2, 'Iphone', '750 $','iPhone 11 128 Gb White');
-INSERT  INTO carts VALUES (3, 'Iphone', '700 $','iPhone 11 64 Gb White');
-INSERT  INTO carts VALUES (4, 'Iphone', '700 $','iPhone 11 64 Gb Grey');
-INSERT  INTO carts VALUES (5, 'Iphone', '750 $','iPhone 11 128 Gb Grey');
+
+INSERT  INTO carts VALUES (1, 'Iphone', '700 $',64);
+INSERT  INTO carts VALUES (2, 'Iphone', '750 $',128);
+INSERT  INTO carts VALUES (3, 'Iphone', '700 $',64);
+INSERT  INTO carts VALUES (4, 'Iphone', '700 $',64);
+INSERT  INTO carts VALUES (5, 'Iphone', '750 $',128);
 
 
 /*INSERT INTO payments VALUES (1, 'Adelina', '2019-09-06', 1, 100);
