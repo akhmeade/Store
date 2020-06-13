@@ -8,14 +8,20 @@
 
 <table class="table table-striped">
     <thead>
-    <tr>
-        <th>ID</th>
-        <th>Cart number</th>
-    </tr>
-    </thead>
 
-    <tr ng-repeat="cart in $ctrl.items | filter:$ctrl.query track by cart.id">
-        <td>{{cart.id}}</td>
-        <td>{{cart.userId}}</td>
-    </tr>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Amount ($)</th>
+
+</tr>
+</thead>
+
+<tr ng-repeat="cart in $ctrl.items | filter:$ctrl.query track by payment.id">
+    <td>{{cart.id}}</td>
+    <td>{{cart.name}}</td>
+    <td>{{cart.price}}</td>
+    <td>{{cart.amount}}</td>
+</tr>
 </table>
