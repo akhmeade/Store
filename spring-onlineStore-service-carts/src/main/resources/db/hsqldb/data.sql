@@ -1,15 +1,9 @@
-INSERT IGNORE INTO types VALUES (1, 'cat');
-INSERT IGNORE INTO types VALUES (2, 'dog');
-INSERT IGNORE INTO types VALUES (3, 'lizard');
-INSERT IGNORE INTO types VALUES (4, 'snake');
-INSERT IGNORE INTO types VALUES (5, 'bird');
-INSERT IGNORE INTO types VALUES (6, 'hamster');
 
-INSERT IGNORE INTO carts VALUES (1, 'Iphone', '700 $','iPhone 11 64 Gb Grey');
-INSERT IGNORE INTO carts VALUES (2, 'Iphone', '750 $','iPhone 11 128 Gb White');
-INSERT IGNORE INTO carts VALUES (3, 'Iphone', '700 $','iPhone 11 64 Gb White');
-INSERT IGNORE INTO carts VALUES (4, 'Iphone', '700 $','iPhone 11 64 Gb Grey');
-INSERT IGNORE INTO carts VALUES (5, 'Iphone', '750 $','iPhone 11 128 Gb Grey');
+INSERT  INTO carts VALUES (1, 'Iphone', '700 $','iPhone 11 64 Gb Grey');
+INSERT  INTO carts VALUES (2, 'Iphone', '750 $','iPhone 11 128 Gb White');
+INSERT  INTO carts VALUES (3, 'Iphone', '700 $','iPhone 11 64 Gb White');
+INSERT  INTO carts VALUES (4, 'Iphone', '700 $','iPhone 11 64 Gb Grey');
+INSERT  INTO carts VALUES (5, 'Iphone', '750 $','iPhone 11 128 Gb Grey');
 
 
 /*INSERT INTO payments VALUES (1, 'Adelina', '2019-09-06', 1, 100);
