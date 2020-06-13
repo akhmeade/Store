@@ -13,23 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.online.store.payments.model;
+package org.springframework.online.store.payments.web;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 
-import java.util.List;
-import java.util.Optional;
+import javax.validation.constraints.Size;
+import java.util.Date;
 
-public interface PaymentRepository extends JpaRepository<Payment, Integer> {
+@Data
+class PaymentRequest {
+    private int id;
 
-    @Query("SELECT ptype FROM PaymentType ptype ORDER BY ptype.name")
-    List<PaymentType> findPaymentTypes();
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date someDate;
 
-    @Query("FROM PaymentType ptype WHERE ptype.id = :typeId")
-    Optional<PaymentType> findPaymentTypeById(@Param("typeId") int typeId);
+    @Size(min = 1)
+    private String name;
 
-
+    private int typeId;
+    private int amount;
 }
-

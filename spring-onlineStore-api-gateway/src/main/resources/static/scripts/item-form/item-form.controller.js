@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('itemForm')
-    .controller('ItemFormController', ["$http", '$state', '$stateParams', function ($http, $state, $stateParams) {
+    .controller('ItemFormController',
+        ["$http", '$state', '$stateParams', function ($http, $state, $stateParams) {
         var self = this;
 
         var itemId = $stateParams.itemId || 0;

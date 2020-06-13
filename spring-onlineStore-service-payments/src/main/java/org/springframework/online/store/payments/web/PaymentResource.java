@@ -21,13 +21,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.online.store.payments.model.Payment;
 import org.springframework.online.store.payments.model.PaymentRepository;
+import org.springframework.online.store.payments.model.PaymentType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
-@RequestMapping("/payments")
+//@RequestMapping("/payments")
 @RestController
 @Timed("onlinestore.payment")
 @RequiredArgsConstructor
@@ -36,32 +37,38 @@ public class PaymentResource {
 
     private final PaymentRepository paymentRepository;
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public Payment createItem(@Valid @RequestBody Payment payment) {
-        return paymentRepository.save(payment);
+    @GetMapping("/types")
+    public List<PaymentType> getPaymentTypes() {
+        return paymentRepository.findPaymentTypes();
     }
 
-    @GetMapping(value = "/{paymentId}")
+    @GetMapping(value = "/payments/{paymentId}")
     public Optional<Payment> findItem(@PathVariable("paymentId") int paymentId) {
         return paymentRepository.findById(paymentId);
     }
 
-    @GetMapping
+    @GetMapping("/payments")
     public List<Payment> findAll() {
         return paymentRepository.findAll();
     }
 
-    @PutMapping(value = "/{paymentId}")
+    @PostMapping("/payments")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Payment createPayment(@Valid @RequestBody Payment item) {
+        return paymentRepository.save(item);
+    }
+
+    @PutMapping(value = "/payments/{paymentId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateItem(@PathVariable("paymentId") int paymentId, @Valid @RequestBody Payment paymentRequest) {
         final Optional<Payment> payment = paymentRepository.findById(paymentId);
 
-        final Payment paymentModel = payment.orElseThrow(() -> new ResourceNotFoundException("Owner "+ paymentId +" not found"));
+        final Payment paymentModel = payment.orElseThrow(() -> new ResourceNotFoundException("Payment "+ paymentId +" not found"));
         // This is done by hand for simplicity purpose. In a real life use-case we should consider using MapStruct.
         paymentModel.setName(paymentRequest.getName());
         paymentModel.setDate(paymentRequest.getDate());
         paymentModel.setType(paymentRequest.getType());
+        paymentModel.setAmount(paymentRequest.getAmount());
         log.info("Saving payment {}", paymentModel);
         paymentRepository.save(paymentModel);
     }

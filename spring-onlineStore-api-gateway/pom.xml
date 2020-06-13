@@ -10,8 +10,8 @@
 
     <parent>
         <groupId>org.springframework.samples</groupId>
-        <artifactId>spring-petclinic-microservices</artifactId>
-        <version>2.2.1</version>
+        <artifactId>spring-onlineStore-microservices</artifactId>
+        <version>2.2.2</version>
     </parent>
 
     <properties>
