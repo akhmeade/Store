@@ -47,7 +47,7 @@ Eureka is one of Netflix'S OSS projects supported by Spring Cloud.
 Like what was done for the configuration server, it is necessary to implement an Eureka server (spring-petclinic-discovery-server module). 
 The Eureka server comes with a small supervision interface accessible locally at the address http://localhost:8761/. The status of the different microservices and the number of instances 
 are visible here :
-![Microservises scheme](Eureka.jpg "Architecture") 
+![Eureka](Eureka.jpg "Eureka") 
 ## Team: 
 * Akhmedzianova Adelina
 * Antonov Nikolai
