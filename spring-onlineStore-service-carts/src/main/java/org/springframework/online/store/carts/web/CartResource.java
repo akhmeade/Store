@@ -34,13 +34,7 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * @author Juergen Hoeller
- * @author Ken Krebs
- * @author Arjen Poutsma
- * @author Michael Isvy
- * @author Maciej Szarlinski
- */
+
 @RequestMapping("/carts")
 @RestController
 @RequiredArgsConstructor
@@ -72,7 +66,7 @@ class CartResource {
         final Optional<Cart> item = cartRepository.findById(cartId);
 
         final Cart cartModel = item.orElseThrow(() -> new RuntimeException("Cart "+ cartId +" not found"));
-        cartModel.setUserId(cartRequest.getUserId());
+        cartModel.setId(cartRequest.getId());
         log.info("Saving item {}", cartModel);
         cartRepository.save(cartModel);
     }
