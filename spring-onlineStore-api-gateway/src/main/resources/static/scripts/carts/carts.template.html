@@ -18,9 +18,10 @@
 </tr>
 </thead>
 
-<tr ng-repeat="cart in $ctrl.items | filter:$ctrl.query track by payment.id">
-    <td>{{cart.id}}</td>
-    <td>{{cart.name}}</td>
-
+<tr ng-repeat="carts in $ctrl.items | filter:$ctrl.query track by carts.id">
+    <td>{{carts.id}}</td>
+    <td>{{carts.name}}</td>
 </tr>
 </table>
+
+

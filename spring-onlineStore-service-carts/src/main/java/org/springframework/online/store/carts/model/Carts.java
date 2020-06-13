@@ -20,51 +20,22 @@ import lombok.Builder;
 import lombok.NoArgsConstructor;
 import org.springframework.core.style.ToStringCreator;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import java.util.Date;
-import java.util.Set;
-import org.springframework.core.style.ToStringCreator;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import java.util.Date;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-
-import org.springframework.beans.support.MutableSortDefinition;
-import org.springframework.beans.support.PropertyComparator;
-import org.springframework.core.style.ToStringCreator;
 
 
 @Entity
-@Table(name = "cart")
-@Builder(builderMethodName = "cart")
+@Table(name = "carts")
+@Builder(builderMethodName = "carts")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Cart {
+public class Carts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -111,7 +82,7 @@ public class Cart {
         return amount;
     }
 
-    public Cart setAmount(Integer amount_) {
+    public Carts setAmount(Integer amount_) {
         this.amount = amount_;
         return this;
     }
