@@ -40,18 +40,14 @@ In order to start entire infrastructure using Docker, you have to build images b
 *  Discount
 
 ## Eureka Service directory
-To communicate, microservices must know how to co-locate. In a microservices architecture hosted in the Cloud, we can hardly predict the number of instances of the same microservice (depending on the load) or even where they will be deployed (and therefore on which IP and which port they will be accessible). This is where the Eureka server comes into play : it will link microservices. Each microservice will :
-
+To communicate, microservices must know how to co-locate. In a microservices architecture hosted in the Cloud, we can hardly predict the number of instances of the same microservice (depending on the load) or even where they will be deployed (and therefore on which IP and which port they will be accessible). This is where the Eureka server comes into play : it will link microservices. 
 Register at startup and periodically give sign of life (heartbeat every 30 seconds)
-Retrieve the address of their adhesions from an identifier, in this case the name of the application declared via the property application.name (ex : vets-service) of the boostrap.yml (loaded before application.properties)
+Retrieve the address of their adhesions from an identifier, in this case the name of the application declared via the property application.name of the boostrap.yml (loaded before application.properties)
 Eureka is one of Netflix'S OSS projects supported by Spring Cloud.
-Like what was done for the configuration server, it is necessary to implement an Eureka server (spring-petclinic-discovery-server module). This is done very simply :
-
+Like what was done for the configuration server, it is necessary to implement an Eureka server (spring-petclinic-discovery-server module). 
 The Eureka server comes with a small supervision interface accessible locally at the address http://localhost:8761/. The status of the different microservices and the number of instances 
 are visible here :
-
-![Microservises scheme](architecture.jpg "Architecture") //исправить на скрин
-
+![Microservises scheme](Eureka.jpg "Architecture") 
 ## Team: 
 * Akhmedzianova Adelina
 * Antonov Nikolai
