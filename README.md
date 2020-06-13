@@ -65,6 +65,11 @@ To avoid any standard code, Spring Cloud Netflix suggests using the Zuul proxy .
 Spring Boot Admin uses various drives offered by Spring Boot: heapdump, threadump, logging tools, scheduled tasks… Starting with Spring Boot 2, for security reasons, only the status and information of the drives are displayed by default. Other execution mechanisms must be explicitly activated.
 Admin Spring Boot admin http http: / / localhost: 9090 / :
 ![logs](logs.JPG "SpringBoot") 
+By selecting one of the 2 instances of customer service, you get access to various administrative tools, including, for example, monitoring resource consumption (memory, thread, processor).
+Spring Boot Admin is not limited to displaying information in nice charts. The administrator can change the logging level of the Logback Logger. The level is changed immediately. No restart is required.
+![logs](logs2.JPG "SpringBoot") 
+![logs](logs3.JPG "SpringBoot") 
+![logs](logs4.JPG "SpringBoot") 
 ## Team: 
 * Akhmedzianova Adelina
 * Antonov Nikolai
