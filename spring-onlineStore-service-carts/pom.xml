@@ -4,13 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.springframework.samples.petclinic.visits</groupId>
-	<artifactId>spring-petclinic-service-carts</artifactId>
+	<artifactId>spring-onlineStore-service-carts</artifactId>
 	<packaging>jar</packaging>
 	<description>Spring PetClinic Visits Service</description>
 
     <parent>
         <groupId>org.springframework.samples</groupId>
-        <artifactId>spring-petclinic-microservices</artifactId>
+        <artifactId>spring-onlineStore-microservices</artifactId>
         <version>2.2.1</version>
     </parent>
 
