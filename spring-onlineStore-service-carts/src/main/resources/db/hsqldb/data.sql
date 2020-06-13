@@ -4,7 +4,7 @@ INSERT INTO types VALUES (3, 'Ekaterina');
 INSERT INTO types VALUES (4, 'Dina');
 
 
-INSERT  INTO carts VALUES (1, 'Iphone', '700 $',64);
+INSERT  INTO carts VALUES (1, 'Iphone 11', '700 $',64);
 INSERT  INTO carts VALUES (2, 'Iphone', '750 $',128);
 INSERT  INTO carts VALUES (3, 'Iphone', '700 $',64);
 INSERT  INTO carts VALUES (4, 'Iphone', '700 $',64);
