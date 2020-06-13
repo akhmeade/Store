@@ -42,7 +42,7 @@ import java.util.Optional;
 @Timed("onlinestore.cart")
 class CartResource {
 
-    private final CartRepository cartRepository;
+   /* private final CartRepository cartRepository;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -67,6 +67,39 @@ class CartResource {
 
         final Cart cartModel = item.orElseThrow(() -> new RuntimeException("Cart "+ cartId +" not found"));
         cartModel.setId(cartRequest.getId());
+        log.info("Saving item {}", cartModel);
+        cartRepository.save(cartModel);
+    }
+}
+*/
+   private final CartRepository cartRepository;
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Cart createItem(@Valid @RequestBody Cart cart) {
+        return cartRepository.save(cart);
+    }
+
+    @GetMapping(value = "/{cartId}")
+    public Optional<Cart> findCart(@PathVariable("cartId") int cartId) {
+        return cartRepository.findById(cartId);
+    }
+
+    @GetMapping
+    public List<Cart> findAll() {
+        return cartRepository.findAll();
+    }
+
+    @PutMapping(value = "/{cartId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateCart(@PathVariable("cartId") int cartId, @Valid @RequestBody Cart cartRequest) {
+        final Optional<Cart> cart = cartRepository.findById(cartId);
+
+        final Cart cartModel = cart.orElseThrow(() -> new ResourceNotFoundException("Owner " + cartId + " not found"));
+        // This is done by hand for simplicity purpose. In a real life use-case we should consider using MapStruct.
+        cartModel.setName(cartRequest.getName());
+        cartModel.setPrice(cartRequest.getPrice());
+        cartModel.setAmount(cartRequest.getAmount());
         log.info("Saving item {}", cartModel);
         cartRepository.save(cartModel);
     }
