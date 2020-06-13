@@ -80,8 +80,8 @@ public class Cart {
     @Column(name = "amount")
     private Integer amount;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "owner")
-    private Set<Cart> payments;
+    //@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "owner")
+    //private Set<Cart> payments;
 
     public Integer getId() {
         return id;
