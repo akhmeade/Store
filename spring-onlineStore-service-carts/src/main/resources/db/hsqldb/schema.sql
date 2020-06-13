@@ -12,9 +12,9 @@ CREATE TABLE carts (
   name VARCHAR(255),
   price VARCHAR(255),
   description VARCHAR(255)
-) engine=InnoDB;
+  engine=InnoDB;
 );
-ALTER TABLE payments ADD CONSTRAINT fk_pets_types FOREIGN KEY (type_id) REFERENCES types (id);
-CREATE INDEX payments_name ON payments (name);
+ALTER TABLE carts ADD CONSTRAINT fk_pets_types FOREIGN KEY (type_id) REFERENCES types (id);
+/*CREATE INDEX payments_name ON payments (name);*/
 
 
