@@ -23,9 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-/**
- * @author Maciej Szarlinski
- */
+
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(PetResource.class)
 @ActiveProfiles("test")
@@ -41,7 +39,7 @@ class PaymentResourceTest {
     ItemRepository itemRepository;
 
     @Test
-    void shouldGetAPetInJSonFormat() throws Exception {
+    void shouldGetAPaymentInJSonFormat() throws Exception {
 
         Payment payment = setupPet();
 
@@ -52,18 +50,18 @@ class PaymentResourceTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType("application/json"))
             .andExpect(jsonPath("$.id").value(2))
-            .andExpect(jsonPath("$.name").value("Basil"))
+            .andExpect(jsonPath("$.name").value("Dina"))
             .andExpect(jsonPath("$.type.id").value(6));
     }
 
     private Payment setupPet() {
         Item owner = new Item();
-        owner.setName("George");
-        owner.setPrice("Bush");
+        owner.setName("Iphone");
+        owner.setPrice("700");
 
         Payment payment = new Payment();
 
-        payment.setName("Basil");
+        payment.setName("Dina");
         payment.setId(2);
 
         PaymentType paymentType = new PaymentType();

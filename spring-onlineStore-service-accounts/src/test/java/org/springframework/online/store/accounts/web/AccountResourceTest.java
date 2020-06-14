@@ -20,9 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-/**
- * @author Maciej Szarlinski
- */
+
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(AccountResource.class)
 @ActiveProfiles("test")
@@ -35,7 +33,7 @@ class AccountResourceTest {
     AccountRepository accountRepository;
 
     @Test
-    void shouldGetAPetInJSonFormat() throws Exception {
+    void shouldGetAccountInJSonFormat() throws Exception {
 
         Account owner = setupPet();
 
@@ -45,12 +43,12 @@ class AccountResourceTest {
         mvc.perform(get("/accounts/2").accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk())
             .andExpect(content().contentType("application/json"))
-            .andExpect(jsonPath("$.name").value("George"));
+            .andExpect(jsonPath("$.name").value("Kate"));
     }
 
     private Account setupPet() {
         Account owner = new Account();
-        owner.setName("George");
+        owner.setName("Kate");
         return owner;
     }
 }
