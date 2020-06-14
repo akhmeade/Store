@@ -32,7 +32,7 @@ import java.util.Set;
 // #####################################################
 
 @Entity
-@Table(name = "Discounts")
+@Table(name = "discounts")
 public class Discount {
 
     // ---------------------------------------------------
