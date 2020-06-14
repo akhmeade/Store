@@ -31,9 +31,9 @@ import java.util.Optional;
 
 @RequestMapping("/discounts")
 @RestController
-@Timed("onlinestore.discount")
 @RequiredArgsConstructor
 @Slf4j
+@Timed("onlinestore.discounts")
 public class DiscountResource {
 
     private final DiscountRepository discountRepository;
