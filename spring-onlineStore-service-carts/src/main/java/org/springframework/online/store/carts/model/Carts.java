@@ -40,6 +40,10 @@ public class Carts {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "account")
+    @NotEmpty
+    private String account;
+
     @Column(name = "name")
     @NotEmpty
     private String name;
@@ -48,8 +52,12 @@ public class Carts {
     @NotEmpty
     private String price;
 
-    @Column(name = "amount")
-    private Integer amount;
+    @Column(name = "discount")
+    private Integer discount;
+
+    @Column(name = "payment")
+    @NotEmpty
+    private String payment;
 
     //@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "owner")
     //private Set<Cart> payments;
@@ -58,12 +66,20 @@ public class Carts {
         return id;
     }
 
+    public String getAccount() {
+        return account;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setId(final Integer id) {
         this.id = id;
+    }
+
+    public void setAccount(final String account) {
+        this.account = account;
     }
 
     public void setName(final String name) {
@@ -78,13 +94,20 @@ public class Carts {
         this.price = price;
     }
 
-    public Integer getAmount() {
-        return amount;
+    public Integer getDiscount() {
+        return discount;
     }
 
-    public Carts setAmount(Integer amount_) {
-        this.amount = amount_;
+    public Carts setDiscount(Integer discount_) {
+        this.discount = discount_;
         return this;
+    }
+
+    public String getPayment() {
+        return payment;
+    }
+    public void setPayment(final String payment) {
+        this.payment = payment;
     }
 
         @Override
@@ -92,9 +115,11 @@ public class Carts {
             return new ToStringCreator(this)
 
                 .append("id", this.getId())
+                .append("account", this.getAccount())
                 .append("name", this.getName())
                 .append("price", this.getPrice())
-                .append("amount", this.getAmount())
+                .append("discount", this.getDiscount())
+                .append("payment", this.getPayment())
                 .toString();
         }
     }

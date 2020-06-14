@@ -98,8 +98,10 @@ class CartsResource {
         final Carts cartsModel = carts.orElseThrow(() -> new ResourceNotFoundException("Owner " + cartsId + " not found"));
         // This is done by hand for simplicity purpose. In a real life use-case we should consider using MapStruct.
         cartsModel.setName(cartsRequest.getName());
+        cartsModel.setAccount(cartsRequest.getAccount());
         cartsModel.setPrice(cartsRequest.getPrice());
-        cartsModel.setAmount(cartsRequest.getAmount());
+        cartsModel.setDiscount(cartsRequest.getDiscount());
+        cartsModel.setPayment(cartsRequest.getPayment());
         log.info("Saving item {}", cartsModel);
         cartsRepository.save(cartsModel);
     }

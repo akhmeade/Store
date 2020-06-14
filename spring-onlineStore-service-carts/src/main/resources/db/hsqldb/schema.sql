@@ -9,9 +9,11 @@ CREATE INDEX types_name ON types (name);
 
 CREATE TABLE carts (
   id         INTEGER IDENTITY PRIMARY KEY,
+  account VARCHAR(255),
   name VARCHAR(255),
   price VARCHAR(255),
-  amount INTEGER NOT NULL
+  discount INTEGER NOT NULL,
+  payment VARCHAR(255)
   /*description VARCHAR(255)*/
 
 );
