@@ -6,7 +6,7 @@ INSERT INTO types VALUES (4, 'Dina');
 
 INSERT  INTO carts VALUES (1, 'Adelina','Iphone 11', '700 $', 5, 'Cash');
 INSERT  INTO carts VALUES (2, 'Regina','Ipad Air', '750 $', 2, 'Visa');
-INSERT  INTO carts VALUES (3, 'Dana','Asus Republic Game', '700 $', 5, 'Mastercard');
+INSERT  INTO carts VALUES (3, 'Dina','Asus Republic Game', '700 $', 5, 'Mastercard');
 INSERT  INTO carts VALUES (4, 'Ekaterina','Iphone XS MAX', '700 $', 15, 'Visa');
 INSERT  INTO carts VALUES (5, 'Nikolay','Iphone 11 Pro', '750 $', 0, 'Cash');
 
