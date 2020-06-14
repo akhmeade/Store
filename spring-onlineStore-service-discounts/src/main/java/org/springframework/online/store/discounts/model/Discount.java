@@ -66,6 +66,9 @@ public class Discount {
     @Column(name = "new_price")
     @NotEmpty private String new_price;
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "owner")
+    private Set<Payment> payments;
+
     // ---------------------------------------------------
     // GET-methods
     // ---------------------------------------------------
@@ -106,6 +109,29 @@ public class Discount {
             .append("discount", this.get_discount())
             .append("new_price", this.get_newPrice())
             .toString();
+    }
+
+    // -----------------------------------------------------
+    // VIEW the details
+    // -----------------------------------------------------
+    public void addPayment(Payment payment)
+    {
+        getPaymentsInternal().add(payment);
+        payment.set_owner(this);
+    }
+
+    protected Set<Payment> getPaymentsInternal()
+    {
+        if (this.payments == null)
+        { this.payments = new HashSet<>();}
+        return this.payments;
+    }
+
+    public List<Payment> getPayments()
+    {
+        final List<Payment> sortedPayments = new ArrayList<>(getPaymentsInternal());
+        PropertyComparator.sort(sortedPayments, new MutableSortDefinition("name", true, true));
+        return Collections.unmodifiableList(sortedPayments);
     }
 }
 

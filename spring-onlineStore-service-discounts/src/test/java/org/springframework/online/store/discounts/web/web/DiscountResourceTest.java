@@ -10,9 +10,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-/**
- * @author Maciej Szarlinski
- */
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(DiscountResource.class)
 @ActiveProfiles("test")
