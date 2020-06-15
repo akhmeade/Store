@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class InventoryServiceClientIntegrationTest {
 
-    private static final Integer ITEM_ID = 1;
+  /*  private static final Integer ITEM_ID = 1;
 
     private InventoryServiceClient inventoryServiceClient;
 
@@ -57,6 +57,6 @@ class InventoryServiceClientIntegrationTest {
         MockResponse response = new MockResponse();
         consumer.accept(response);
         this.server.enqueue(response);
-    }
+    }*/
 
 }
