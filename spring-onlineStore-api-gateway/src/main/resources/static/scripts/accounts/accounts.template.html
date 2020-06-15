@@ -1,4 +1,4 @@
-<h2>Accounts</h2>
+<!--<h2>Accounts</h2>
 
 <form onsubmit="javascript:void(0)" style="max-width: 20em; margin-top: 2em;">
     <div class="form-group">
@@ -17,5 +17,35 @@
     <tr ng-repeat="account in $ctrl.items | filter:$ctrl.query track by account.id">
         <td>{{account.id}}</td>
         <td>{{account.name}}</td>
+    </tr>
+</table>
+-->
+
+<h2>Accounts</h2>
+
+<form onsubmit="javascript:void(0)" style="max-width: 20em; margin-top: 2em;">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search Filter" ng-model="$ctrl.query" />
+    </div>
+</form>
+
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>Gender</th>
+        <th>Date Of Birth</th>
+    </tr>
+    </thead>
+
+    <tr ng-repeat="accounts in $ctrl.items | filter:$ctrl.query track by accounts.id">
+        <td>{{accounts.id}}</td>
+        <td>{{accounts.firstname}}</td>
+        <td>{{accounts.name}}</td>
+        <td>{{accounts.gender}}</td>
+        <!--<td>{{accounts.someDate}}</td>-->
     </tr>
 </table>

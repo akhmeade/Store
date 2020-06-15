@@ -1,18 +1,3 @@
-/*
- * Copyright 2002-2017 the original author or authors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package org.springframework.online.store.accounts.web;
 
 import io.micrometer.core.annotation.Timed;
@@ -29,12 +14,12 @@ import java.util.Optional;
 
 @RequestMapping("/accounts")
 @RestController
-@Timed("petclinic.account")
+@Timed("onlinestore.accounts")
 @RequiredArgsConstructor
 @Slf4j
 class AccountResource {
 
-    private final AccountRepository accountRepository;
+    /*private final AccountRepository accountRepository;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -60,6 +45,40 @@ class AccountResource {
         final Account accountModel = item.orElseThrow(() -> new ResourceNotFoundException("Owner "+ accountId +" not found"));
         // This is done by hand for simplicity purpose. In a real life use-case we should consider using MapStruct.
         accountModel.setName(accountRequest.getName());
+        log.info("Saving item {}", accountModel);
+        accountRepository.save(accountModel);
+    }
+}*/
+
+    private final AccountRepository accountRepository;
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Account createAccount(@Valid @RequestBody Account accounts) {
+        return accountRepository.save(accounts);
+    }
+
+    @GetMapping(value = "/{accountsId}")
+    public Optional<Account> findAccount(@PathVariable("accountsId") int accountsId) {
+        return accountRepository.findById(accountsId);
+    }
+
+    @GetMapping
+    public List<Account> findAll() {
+        return accountRepository.findAll();
+    }
+
+    @PutMapping(value = "/{accountsId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateItem(@PathVariable("accountsId") int accountsId, @Valid @RequestBody Account accountRequest) {
+        final Optional<Account> item = accountRepository.findById(accountsId);
+
+        final Account accountModel = item.orElseThrow(() -> new ResourceNotFoundException("Owner "+ accountsId +" not found"));
+        // This is done by hand for simplicity purpose. In a real life use-case we should consider using MapStruct.
+        accountModel.setFirstName(accountRequest.getFirstName());
+        accountModel.setName(accountRequest.getName());
+        accountModel.setGender(accountRequest.getGender());
+        //accountModel.setDate(accountRequest.getDate());
         log.info("Saving item {}", accountModel);
         accountRepository.save(accountModel);
     }
