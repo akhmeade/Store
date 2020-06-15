@@ -25,6 +25,8 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class InventoryServiceClient {
 
+    private String hostname = "http://inventory-service/";
+
     private final WebClient.Builder webClientBuilder;
 
     public Mono<ItemDetails> getItem(final int itemId) {
@@ -32,5 +34,9 @@ public class InventoryServiceClient {
             .uri("http://inventory-service/items/{itemId}", itemId)
             .retrieve()
             .bodyToMono(ItemDetails.class);
+    }
+
+    void setHostname(String hostname) {
+        this.hostname = hostname;
     }
 }
