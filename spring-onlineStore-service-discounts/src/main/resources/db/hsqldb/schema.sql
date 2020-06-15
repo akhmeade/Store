@@ -1,7 +1,10 @@
-DROP TABLE discount IF EXISTS;
+DROP TABLE types IF EXISTS;
+DROP TABLE discounts IF EXISTS;
+DROP TABLE payments IF EXISTS;
 
-CREATE TABLE discount (
+CREATE TABLE discounts (
   id         INTEGER IDENTITY PRIMARY KEY,
-  item_id    INTEGER NOT NULL,
-  discount   INTEGER NOT NULL
+  name VARCHAR(255),
+  discount VARCHAR(255),
+  new_price VARCHAR(255)
 );

@@ -1,0 +1,27 @@
+<h2>Discounts</h2>
+
+<form onsubmit="javascript:void(0)" style="max-width: 20em; margin-top: 2em;">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search Filter" ng-model="$ctrl.query" />
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Discount</th>
+        <th>NewPrice</th>
+    </tr>
+    </thead>
+
+    <tr ng-repeat="discounts in $ctrl.items | filter:$ctrl.query track by discounts.id">
+        <td>
+            <a ui-sref="itemDetails({ itemId: account.id })">
+                {{discounts.name}}
+            </a>
+        </td>
+        <td>{{discounts.discount}}</td>
+        <td>{{discounts.new_price}}</td>
+    </tr>
+</table>
