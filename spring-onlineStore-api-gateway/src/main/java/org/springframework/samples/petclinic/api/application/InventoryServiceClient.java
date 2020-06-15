@@ -25,13 +25,15 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class InventoryServiceClient {
 
-    private String hostname = "http://inventory-service/";
+    private String hostname = "http://localhost:8080/#!/items/details/";
+        //"http://inventory-service/";
+
 
     private final WebClient.Builder webClientBuilder;
 
     public Mono<ItemDetails> getItem(final int itemId) {
         return webClientBuilder.build().get()
-            .uri("http://inventory-service/items/{itemId}", itemId)
+            .uri("http://localhost:8080/#!/items/details/{itemId}", itemId)
             .retrieve()
             .bodyToMono(ItemDetails.class);
     }

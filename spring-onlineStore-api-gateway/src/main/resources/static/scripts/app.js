@@ -3,7 +3,7 @@
 var onlineStoreApp = angular.module('onlineStoreApp', [
     'ui.router', 'layoutNav', 'layoutFooter', 'layoutWelcome',
     'itemsList', 'itemDetails', 'itemForm', 'paymentsList', 'accountsList',
-    'contactsList', 'cartsList', 'paymentDetails', 'paymentForm','itemAddForm'
+    'contactsList', 'cartsList', 'paymentDetails', 'paymentForm'
     ]);
 
 onlineStoreApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', function(
